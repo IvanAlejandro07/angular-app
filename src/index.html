@@ -6,8 +6,15 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    setInterval(function() {
+      var colors = ["red", "green", "blue", "orange", "purple"];
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById("nombre").style.color = randomColor;
+    }, 1000);
+  </script>
 </head>
 <body>
-  <app-root></app-root>
+  <center><p id="nombre">Ivan Alejandro</p></center>
 </body>
 </html>
