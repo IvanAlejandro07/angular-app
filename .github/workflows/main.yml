@@ -3,24 +3,26 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+permission:
+  contents: write
+
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lastest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2.1.5
-        with:
-          node-version: '18.x'
-      - name: Install dependencies
-        run: npm install
 
-      - name: Build the project
-        run: npm run build --prod
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install and Build
+        run:
+         npm ci
+         npm run build
       
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4
         
         with:
           folder: dist/angular-app
