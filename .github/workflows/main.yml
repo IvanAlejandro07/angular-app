@@ -5,7 +5,7 @@ on:
       - main
   workflow_dispatch:
 
-permission:
+permissions:
   contents: write
 
 jobs:
@@ -18,11 +18,11 @@ jobs:
 
       - name: Install and Build
         run:
-         npm ci
-         npm run build
+          npm ci
+          npm run build
       
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4
+        uses: JamesIves/github-pages-deploy-action@v4
         
         with:
           folder: dist/angular-app
