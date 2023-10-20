@@ -10,7 +10,7 @@ permissions:
  
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
 
       - name: Checkout
